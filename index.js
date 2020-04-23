@@ -1,9 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 
 const server = express(); // A variável server recebe express()
                           // os parenteses indicam que o express exporta uma função,
                           // como foi visto nas notas anteriores de aula.
                           // Ou seja, estamos chamando a função do express.
+
+server.use(cors()); // Com isto todas as aplicações front-end poderão acessar a aplicação.                          
 
 server.use(express.json()); // o server é a instância do express, o use é um plugin já importado 
                             // que estamos adicionando pra ele (express) e passamos pra ele o
